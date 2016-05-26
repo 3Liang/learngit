@@ -30,7 +30,7 @@
 ***
 创建SSH Key:  `ssh -t rsa -C "youremail@example.com"`.
 ***
-关联github远程库:  `git add remote origin <远程库地址(git@github.com:3Liang/learngit.git)`
+关联github远程库:  `git add remote origin <远程库地址(git@github.com:3Liang/learngit.git)>`
 ***
 第一次推送本地到远程库:  `git push -u origin master,master代表分支<master>`.  
 非第一次推送:  `git push origin master`.
