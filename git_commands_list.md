@@ -23,17 +23,17 @@
 ***
 改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改:
 
-    1.git reset HEAD <file>
-    2.git reset checkout -- <file>
+    1.git reset HEAD <file>.
+    2.git reset checkout -- <file>.
 ***
 删除一个文件:  `git rm`.
 ***
 创建SSH Key:  `ssh -t rsa -C "youremail@example.com"`.
 ***
-关联github远程库:  `git add remote origin <远程库地址(git@github.com:3Liang/learngit.git)>`
+关联github远程库:  `git add remote <remote-name> <远程库地址(git@github.com:3Liang/learngit.git)>`
 ***
-第一次推送本地到远程库:  `git push -u origin master,master代表分支<master>`.  
-非第一次推送:  `git push origin master`.
+第一次推送本地到远程库:  `git push -u <remote-name> master,master代表分支<master>`.  
+非第一次推送:  `git push <remote-name> master`.
 ***
 克隆远程库:  `git clone <远程库地址(git@github.com:3Liang/learngit.git)>`
 ***
@@ -67,8 +67,33 @@
 ***
 查看远程库信息:  `git remote -v`.
 ***
-推送分支:  `git push origin <branch-name>`.
+推送分支:  `git push <remote-name> <branch-name>`.
 ***
-建立本地分支和远程分支的关联:  `git branch --set-upstream branch-name origin/branch-name`.
+建立本地分支和远程分支的关联:  `git branch --set-upstream branch-name <remote-name>/branch-name`.
 ***
+新建一个轻量标签:  `git tag <tag-name> (可加commitId指定需要打标签的历史版本)`.
+***
+创建带注释标签:  `git tag -a <tag-name> -m <description> (可加commitId指定需要打标签的历史版本)`.
+***
+创建GPG签名标签:  `git tag -s <tag-name> -m <description> (可加commitId指定需要打标签的历史版本)`.
+***
+查看所有标签:  `git tag (后缀标签名可指定查看该标签)`.
+***
+查看标签信息:  `git show tag`.
+***
+删除标签:  `git tag -d <tag-name>`.
+***
+推送指定标签:  `git push <remote-name> <tag-name>`.
+***
+推送所有标签:  `git push <remote-name> --tags`.
+***
+删除远程库标签:  
+* `git tag -d <tag-name>`.
+* `git push <remote-name> :refs/tags/<tag-name>`.
 
+***
+查看文件因.gitignore不能提交原因:  `git check-ignore -v <file>`.
+***
+配置别名:  
+* `git config --global alias.<abbreviated-name> <replaced-character>  配置全局的别名,存放在用户主目录下的.gitconfig里面`.
+* `git config --local alias.<abbreviated-name> <replaced-character>  配置当前repository的别名，存放在工作区的.git/config里面`.
