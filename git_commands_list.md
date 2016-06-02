@@ -69,7 +69,7 @@
 ***
 推送分支:  `git push <remote-name> <branch-name>`.
 ***
-建立本地分支和远程分支的关联:  `git branch --set-upstream-to|track <remote-name>/branch-name`.
+建立本地分支和远程分支的关联:  `git branch --set-upstream-to | track <remote-name>/branch-name`.
 ***
 新建一个轻量标签:  `git tag <tag-name> (可加commitId指定需要打标签的历史版本)`.
 ***
